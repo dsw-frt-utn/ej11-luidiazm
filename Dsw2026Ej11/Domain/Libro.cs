@@ -1,14 +1,18 @@
 ﻿namespace Dsw2026Ej11.Domain;
 
-public class Libro
+public class Libro : EntidadBase
 {
-    public int Id { get; set; }
+    
     public string Titulo { get; set; }
     public decimal Precio { get; set; }
 
-    public Libro(int id, string titulo, decimal precio)
+    public Libro(string titulo, decimal precio) : base()
     {
-        Id = id;
+        Titulo = titulo;
+        Precio = precio;
+    }
+    public Libro ( int id, string titulo, decimal precio ) : base(id)
+    {
         Titulo = titulo;
         Precio = precio;
     }
@@ -17,7 +21,7 @@ public class Libro
     {
         return new List<Libro>
         {
-            new Libro(1, "Clean Code", 45000),
+            new Libro(1,"Clean Code", 45000),
             new Libro(2, "The Pragmatic Programmer", 52000),
             new Libro(3, "Design Patterns", 61000),
             new Libro(4, "Refactoring", 57000),

@@ -1,18 +1,23 @@
 ﻿namespace Dsw2026Ej11.Domain;
 
-public class Alumno
+public class Alumno : EntidadBase
 {
-    public int Id { get; }
+    
     public string Nombre { get; }
     public double Promedio { get; }
 
-    public Alumno(int id, string nombre, double promedio)
+    public Alumno(string nombre, double promedio) : base()
     {
-        Id = id;
+       
         Nombre = nombre;
         Promedio = promedio;
     }
 
+    public Alumno(int id, string nombre, double promedio) : base (id)
+    {
+        Nombre = nombre;
+        Promedio = promedio;
+    }
     public override string ToString()
     {
         return $"{Id} - {Nombre} - Promedio: {Promedio}";
