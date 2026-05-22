@@ -20,9 +20,9 @@ public class CasoLinq
 {
     private List<Libro> _libros = Libro.CrearLista();
 
-    public Libro Getmero() => _libros.First();
+    public Libro GetPrimero() => _libros.First();
 
-    public Libro Getultimo=> _libros.Last();
+    public Libro GetUltimo()=> _libros.Last();
 
     public decimal GetTotalPrecios() => _libros.Sum(l => l.Precio);
 
